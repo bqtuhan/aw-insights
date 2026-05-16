@@ -5,14 +5,14 @@
 > **Zero data leaves your machine. Ever.**
 
 <p align="center">
-  <img src="[https://img.shields.io/badge/vite-6.0-%23646CFF?logo=vite](https://img.shields.io/badge/vite-6.0-%23646CFF?logo=vite)" alt="Vite 6" />
-  <img src="[https://img.shields.io/badge/react-19.2-%2361DAFB?logo=react](https://img.shields.io/badge/react-19.2-%2361DAFB?logo=react)" alt="React 19" />
-  <img src="[https://img.shields.io/badge/typescript-5.7-%233178C6?logo=typescript](https://img.shields.io/badge/typescript-5.7-%233178C6?logo=typescript)" alt="TypeScript 5.7" />
-  <img src="[https://img.shields.io/badge/zustand-5.0-%23443E38](https://img.shields.io/badge/zustand-5.0-%23443E38)" alt="Zustand 5" />
-  <img src="[https://img.shields.io/badge/tailwind-4.0-%2306B6D4?logo=tailwindcss](https://img.shields.io/badge/tailwind-4.0-%2306B6D4?logo=tailwindcss)" alt="Tailwind 4" />
-  <img src="[https://img.shields.io/badge/recharts-3.8-%2322B5BF](https://img.shields.io/badge/recharts-3.8-%2322B5BF)" alt="Recharts 3.8" />
-  <img src="[https://img.shields.io/badge/license-AGPLv3-blue.svg](https://img.shields.io/badge/license-AGPLv3-blue.svg)" alt="AGPLv3" />
-  <img src="[https://img.shields.io/badge/PRs-welcome-brightgreen.svg](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)" alt="PRs Welcome" />
+  <img src="https://img.shields.io/badge/vite-6.0-%23646CFF?logo=vite" alt="Vite 6" />
+  <img src="https://img.shields.io/badge/react-19.2-%2361DAFB?logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/typescript-5.7-%233178C6?logo=typescript" alt="TypeScript 5.7" />
+  <img src="https://img.shields.io/badge/zustand-5.0-%23443E38" alt="Zustand 5" />
+  <img src="https://img.shields.io/badge/tailwind-4.0-%2306B6D4?logo=tailwindcss" alt="Tailwind 4" />
+  <img src="https://img.shields.io/badge/recharts-3.8-%2322B5BF" alt="Recharts 3.8" />
+  <img src="https://img.shields.io/badge/license-AGPLv3-blue.svg" alt="AGPLv3" />
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
 </p>
 
 ---
@@ -157,15 +157,13 @@ This project is licensed under the GNU Affero General Public License v3.0 — se
 ⭐ Star History
 
 <p align="center">
-  <a href="[https://github.com/bqtuhan/aw-insights/stargazers](https://github.com/bqtuhan/aw-insights/stargazers)">
-    <img src="[https://img.shields.io/github/stars/bqtuhan/aw-insights?style=social](https://img.shields.io/github/stars/bqtuhan/aw-insights?style=social)" alt="GitHub stars" />
+  <a href="https://github.com/bqtuhan/aw-insights/stargazers">
+    <img src="https://img.shields.io/github/stars/bqtuhan/aw-insights?style=social" alt="GitHub stars" />
   </a>
 </p>
 
 ---
 
 <p align="center">
-  <sub>Built with ❤️ by <a href="[https://github.com/bqtuhan](https://github.com/bqtuhan)">bqtuhan</a> · Privacy-First · Open Source · AGPLv3</sub>
+  <sub>Built with ❤️ by <a href="https://github.com/bqtuhan">bqtuhan</a> · Privacy-First · Open Source · AGPLv3</sub>
 </p>
-```
-
