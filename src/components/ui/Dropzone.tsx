@@ -1,9 +1,11 @@
 import { useState, useRef, useCallback } from 'react';
 import { useDatasetProcessor } from '@/hooks/useDatasetProcessor';
+import { useAppStore } from '@/store';
 import { cn } from '@/lib/utils';
 
 export function Dropzone() {
   const { processFile, cancelProcessing, status, progressMessage } = useDatasetProcessor();
+  const storeError = useAppStore((s) => s.error);
   const [isDragOver, setIsDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [errorDetails, setErrorDetails] = useState<{ message: string } | null>(null);
@@ -68,8 +70,11 @@ export function Dropzone() {
     fileInputRef.current?.click();
   };
 
+  const clearError = useAppStore((s) => s.clearDataset);
+
   const handleRetry = () => {
     setErrorDetails(null);
+    clearError();
     cancelProcessing();
   };
 
@@ -82,7 +87,7 @@ export function Dropzone() {
           </div>
           <h3 className="text-lg font-semibold text-[#f43f5e] mb-2">Import Failed</h3>
           <p className="text-sm text-[#8899bb] mb-6">
-            {errorDetails?.message || 'An unexpected error occurred while processing your file.'}
+            {errorDetails?.message || storeError?.message || 'An unexpected error occurred while processing your file.'}
           </p>
           <button
             onClick={handleRetry}

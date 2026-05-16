@@ -41,6 +41,12 @@ export type BucketType =
  * The `data` field shape depends on the bucket type.
  */
 export interface AWEvent {
+  /**
+   * Optional numeric event ID assigned by the server.
+   * Present in exports from aw-server-rust (Android / Rust backend).
+   * Absent in exports from aw-server (Python backend) which strips IDs on export.
+   */
+  id?: number;
   /** ISO 8601 UTC timestamp of the event start (e.g. "2026-05-16T08:30:00.000Z"). */
   timestamp: string;
   /** Duration of the event in seconds. */
@@ -133,23 +139,35 @@ export type AWEventData =
 export interface AWBucket {
   /** Unique bucket identifier (e.g. "aw-watcher-window_myhost"). */
   id: string;
-  /** Human-readable bucket name. */
-  name: string;
+  /** Human-readable bucket name (optional — not always present in exports). */
+  name?: string;
   /**
    * Event‑type identifier that determines the schema of every event's `data`.
    * Examples: `"currentwindow"`, `"web.tab.current"`, `"afkstatus"`, …
    */
   type: string;
-  /** Hostname of the machine that collected the data. */
+  /** Watcher client name (e.g. "aw-watcher-window", "aw-android"). */
   client: string;
-  /** Hostname (often same as client). */
+  /** Hostname of the machine that collected the data. */
   hostname: string;
-  /** ISO 8601 timestamp of bucket creation. */
-  created: string;
+  /** ISO 8601 timestamp of bucket creation (optional in some exports). */
+  created?: string;
   /** Optional extra metadata (version, label, etc.). */
-  data: Record<string, unknown>;
+  data?: Record<string, unknown>;
+  /**
+   * Bucket metadata object (present in aw-server-rust / Rust backend exports).
+   * Contains `start` and `end` timestamps of the bucket's event range.
+   */
+  metadata?: {
+    start?: string;
+    end?: string;
+  };
   /** List of events contained in the bucket. */
   events: AWEvent[];
+  /**
+   * ISO 8601 timestamp of the last update (present in aw-server-rust exports).
+   */
+  last_updated?: string;
 }
 
 // ────────────────────────────────────────────────────────────────────────────

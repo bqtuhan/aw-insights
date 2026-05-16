@@ -82,7 +82,15 @@ export function useDatasetProcessor() {
       };
 
       worker.onerror = (ev: ErrorEvent) => {
-        setError({ message: ev.message || 'Worker error', code: 'WORKER_ERROR' });
+        // Provide a more descriptive error message for common failure modes
+        const rawMsg = ev.message || 'Unknown worker error';
+        // CSP or network errors often surface as empty/generic messages
+        const friendlyMsg = rawMsg.includes('Content Security Policy')
+          ? 'Worker blocked by Content Security Policy. Please reload the page.'
+          : rawMsg.includes('NetworkError') || rawMsg.includes('Failed to fetch')
+          ? 'Failed to load parser module. Please check your connection and try again.'
+          : rawMsg;
+        setError({ message: friendlyMsg, code: 'WORKER_ERROR' });
         setStatus('error');
         worker.terminate();
         workerRef.current = null;

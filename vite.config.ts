@@ -63,6 +63,15 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     open: false,
+    allowedHosts: true,
+  },
+
+  preview: {
+    allowedHosts: true,
+  },
+
+  worker: {
+    format: 'es',
   },
 
   build: {
