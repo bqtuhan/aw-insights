@@ -77,7 +77,7 @@ export function AppsSection() {
                   />
                 ))}
               </Pie>
-              <Tooltip content={DarkTooltip} />
+              <Tooltip content={DarkTooltip as any} />
             </PieChart>
           </ResponsiveContainer>
         </div>

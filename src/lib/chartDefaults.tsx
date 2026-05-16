@@ -12,12 +12,13 @@ import { tokens } from './colors';
  */
 type TooltipContentProps = {
   active?: boolean;
-  payload?: Array<{
-    name: string;
-    value: number;
-    color: string;
+  payload?: ReadonlyArray<{
+    name?: string;
+    value?: any;
+    color?: string;
+    payload?: any;
   }>;
-  label?: string;
+  label?: any;
 };
 
 // ────────────────────────────────────────────────────

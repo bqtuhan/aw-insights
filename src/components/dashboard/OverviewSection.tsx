@@ -143,7 +143,7 @@ export function OverviewSection() {
                 fontSize: 11,
               }}
             />
-            <Tooltip content={DarkTooltip} />
+            <Tooltip content={DarkTooltip as any} />
             <Area
               yAxisId="left"
               type="monotone"

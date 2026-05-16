@@ -97,7 +97,7 @@ export function FocusSection() {
               width={100}
               tick={{ fill: '#8899bb', fontSize: 11 }}
             />
-            <Tooltip content={DarkTooltip} />
+            <Tooltip content={DarkTooltip as any} />
             <Bar dataKey="count" fill="#a78bfa" radius={[0, 6, 6, 0]} barSize={16} name="Sessions" />
           </BarChart>
         </ResponsiveContainer>

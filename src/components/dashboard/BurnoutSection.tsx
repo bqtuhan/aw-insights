@@ -105,8 +105,7 @@ export function BurnoutSection() {
               fill="#8899bb"
               fontSize="11"
               fontWeight="600"
-              textTransform="uppercase"
-              letterSpacing="1"
+              style={{ textTransform: 'uppercase', letterSpacing: '1px' }}
             >
               {ba.riskLevel}
             </text>

@@ -73,7 +73,7 @@ export function FlowSection() {
               <CartesianGrid {...gridDefaults} />
               <XAxis dataKey="hour" stroke="#4a5a7a" fontSize={11} tickFormatter={(h: number) => `${h}:00`} />
               <YAxis {...yAxisDefaults} />
-              <Tooltip content={DarkTooltip} />
+              <Tooltip content={DarkTooltip as any} />
               <Bar dataKey="minutes" fill="#00d4ff" radius={[6, 6, 0, 0]} barSize={40} name="Flow minutes" />
             </BarChart>
           </ResponsiveContainer>
