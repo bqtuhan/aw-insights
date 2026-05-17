@@ -28,13 +28,14 @@ import { isWeekend, toDateString } from '@/lib/utils';
 // ────────────────────────────────────────────────────
 
 /**
- * Categories considered “productive” for daily‑summary aggregation.
+ * Categories considered "productive" for daily‑summary aggregation.
  * Matches the default `productiveCategories` used by the FlowDetector.
  */
 const PRODUCTIVE_CATEGORIES: ReadonlySet<AppCategory> = new Set([
   'Development',
   'Design',
   'Productivity',
+  'Communication',
 ]);
 
 // ────────────────────────────────────────────────────
