@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/aw-insights/sw.js', { scope: '/aw-insights/' })})}

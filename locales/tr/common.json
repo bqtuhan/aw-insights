@@ -1,0 +1,228 @@
+{
+  "app": {
+    "name": "AW Insights",
+    "tagline": "Dijital Yaşam Zekası — Gizlilik Öncelikli Analitik",
+    "privacyBadge": "%100 Tarayıcı İçinde · Sıfır Telemetri · Verileriniz Cihazınızdan Çıkmaz"
+  },
+  "nav": {
+    "overview": "Genel Bakış",
+    "focus": "Odaklanma",
+    "flow": "Akış",
+    "burnout": "Tükenmişlik",
+    "apps": "Uygulamalar",
+    "timeline": "Zaman Çizelgesi"
+  },
+  "upload": {
+    "title": "ActivityWatch dışa aktarımınızı bırakın",
+    "subtitle": "JSON dosyanızı sürükleyip bırakın veya göz atmak için tıklayın",
+    "fileHint": "Yalnızca .json dosyaları · %100 gizli · Verileriniz cihazınızdan çıkmaz",
+    "dropHere": "Dosyanızı buraya bırakın",
+    "processing": "Verileriniz İşleniyor",
+    "parsing": "Etkinlikler ayrıştırılıyor...",
+    "error": "İçe Aktarma Başarısız",
+    "retry": "Tekrar Dene",
+    "cancel": "İptal",
+    "success": "İçe Aktarma Tamamlandı",
+    "successMessage": "Panonuz hazır. Analitikler yükleniyor...",
+    "privacyNote": "Tüm işlemler tarayıcınızda yerel olarak gerçekleşir",
+    "howToTitle": "ActivityWatch verilerinizi nasıl dışa aktarırsınız",
+    "howToStep1": "ActivityWatch web arayüzünü açın (genellikle http://localhost:5600)",
+    "howToStep2": "Kenar çubuğundaki Ham Veri sekmesine gidin",
+    "howToStep3": "JSON dosyasını indirmek için Dışa Aktar düğmesine tıklayın",
+    "howToStep4": "İçgörülerinizi oluşturmak için dosyayı buraya bırakın"
+  },
+  "overview": {
+    "title": "Analitik Genel Bakış",
+    "subtitle": "Dijital etkinlik desenlerinizin üst düzey özeti",
+    "metrics": {
+      "focus": {
+        "title": "Odak Seviyesi",
+        "subtext": "Konsantrasyon derinliği"
+      },
+      "flow": {
+        "title": "Akış Hacmi",
+        "subtext": "Derin çalışma süresi"
+      },
+      "burnout": {
+        "title": "Tükenmişlik Riski",
+        "subtext": "Yorgunluk göstergesi"
+      },
+      "tracked": {
+        "title": "Toplam İzlenen",
+        "subtext": "Aktivite geçmişi"
+      }
+    },
+    "chart": {
+      "title": "Günlük Üretkenlik ve Tükenmişlik Eğilimi",
+      "yLeft": "Üretken dk",
+      "yRight": "Tükenmişlik Puanı",
+      "series": {
+        "productive": "Üretken dk",
+        "burnout": "Tükenmişlik Puanı"
+      }
+    },
+    "noData": "Henüz veri yok. Başlamak için bir ActivityWatch dışa aktarımı yükleyin."
+  },
+  "focus": {
+    "title": "Odaklanma Analizi",
+    "subtitle": "Bağlam değiştirme, oturum derinliği ve konsantrasyon desenleri",
+    "metrics": {
+      "score": {
+        "title": "Odak Puanı",
+        "subtext": "Genel konsantrasyon"
+      },
+      "switches": {
+        "title": "Bağlam Değişiklikleri",
+        "subtext": "Tespit edilen kesintiler"
+      },
+      "deep": {
+        "title": "Derin Odaklanma Oturumları",
+        "subtext": "Yüksek yoğunluklu bloklar"
+      },
+      "distractor": {
+        "title": "En Büyük Dikkat Dağıtıcı",
+        "subtext": "En sık kesinti"
+      }
+    },
+    "chart": {
+      "title": "Odak Yoğunluğu Dağılımı",
+      "series": {
+        "sessions": "Odak Oturumları"
+      }
+    },
+    "fragility": "Kırılganlık Puanı",
+    "distractingApps": "En Çok Dikkat Dağıtan Uygulamalar",
+    "sessionCount": "oturum izlendi",
+    "switches": "geçiş",
+    "noData": "Odaklanma verisi mevcut değil."
+  },
+  "flow": {
+    "title": "Akış Durumu Analizi",
+    "subtitle": "Derin çalışma blokları, yoğunluk eğrileri ve zirve üretkenlik saatleri",
+    "metrics": {
+      "total": {
+        "title": "Toplam Akış Süresi",
+        "subtext": "Toplam derin çalışma"
+      },
+      "ratio": {
+        "title": "Akış Oranı",
+        "subtext": "Üretken sürenin %'si"
+      },
+      "avg": {
+        "title": "Ortalama Akış Bloğu",
+        "subtext": "Oturum başına süre"
+      },
+      "peak": {
+        "title": "Zirve Akış Saati",
+        "subtext": "En üretken zaman"
+      }
+    },
+    "chart": {
+      "title": "Saatlik Akış Dağılımı",
+      "empty": "Akış oturumu tespit edilmedi",
+      "series": {
+        "minutes": "Akış Dakikaları"
+      }
+    },
+    "flowSessions": "akış oturumu tespit edildi",
+    "ofProductive": "üretken zamanın",
+    "perSession": "akış oturumu başına",
+    "mostFlowMinutes": "en fazla akış dakikası",
+    "noData": "Akış verisi mevcut değil."
+  },
+  "burnout": {
+    "title": "Tükenmişlik Riski Değerlendirmesi",
+    "subtitle": "Çalışma desenleri ve iyileşme göstergelerine dayalı çok faktörlü analiz",
+    "riskScore": "Tükenmişlik Risk Puanı",
+    "riskLevel": "Risk Seviyesi",
+    "factors": {
+      "lateNight": "Gece Çalışması",
+      "overload": "Haftalık Aşırı Yük",
+      "weekend": "Hafta Sonu Müdahalesi",
+      "recovery": "İyileşme Açığı"
+    },
+    "weight": "Ağırlık",
+    "recommendations": "Öneriler",
+    "riskLevels": {
+      "low": "Düşük",
+      "moderate": "Orta",
+      "high": "Yüksek",
+      "critical": "Kritik"
+    },
+    "trends": {
+      "improving": "İyileşiyor",
+      "stable": "Durağan",
+      "worsening": "Kötüleşiyor"
+    },
+    "warnings": {
+      "lateNightSevere": "Ciddi gece çalışma paterni tespit edildi. Aktif günlerinizin %75'inden fazlası saat 22:00 ile 06:00 arasında çalışma içeriyor. Bu durum sirkadiyen ritmi bozar ve bilişsel iyileşmeyi engeller.",
+      "lateNightModerate": "Orta düzeyde gece çalışma paterni. Çalışmalarınızın önemli bir kısmı saat 22:00'den sonra gerçekleşiyor. Derin çalışmaları mümkünse sabah saatlerine kaydırmayı deneyin.",
+      "overloadSevere": "Ciddi haftalık aşırı yüklenme. 7 günlük hareketli çalışma ortalamanız sürdürülebilir seviyelerin çok üzerinde. Kronik aşırı yüklenme, tükenmişliğin en güçlü öngörücüdür.",
+      "overloadModerate": "Orta düzeyde haftalık aşırı yüklenme tespit edildi. Günlük ortalama çalışma süreniz önerilen eşiğin üzerinde. Yenilenme günleri eklemeyi değerlendirin.",
+      "weekendSevere": "Ciddi hafta sonu müdahalesi. Hafta sonlarınızın %75'inden fazlası önemli çalışma aktivitesi gösteriyor. Tam dinlenme günleri olmadan sürekli çalışma, psikolojik ayrışmayı engeller.",
+      "weekendModerate": "Orta düzeyde hafta sonu çalışması tespit edildi. Hafta sonları düzenli çalışma, iyileşme kapasitesini azaltır. Haftada en az bir tamamen işten uzak gün hedefleyin.",
+      "recoverySevere": "Ciddi iyileşme açığı. Yeterli dinlenme olmadan birden fazla ardarda yüksek yüklü gün geçirdiniz. Bu pattern sürdürülemez ve azalan getirilere yol açar.",
+      "recoveryModerate": "Orta düzeyde iyileşme açığı. Son programınız sınırlı iyileşme pencereleri gösteriyor. Yoğun dönemler arasında kısa molalar bile uzun vadeli dayanıklılığı artırır.",
+      "criticalRisk": "Kritik tükenmişlik riski. Derhal müdahale önerilir. Mevcut patternleriniz klinik tükenmişlik profilleriyle eşleşiyor. Uyku, sınırlar ve dinlenmeye öncelik verin.",
+      "highRisk": "Yüksek tükenmişlik riski tespit edildi. Birden fazla risk faktörü yükselmişdurumda. Çalışma alışkanlıklarının proaktif olarak düzeltilmesi önemle tavsiye edilir.",
+      "trendWorsening": "Tükenmişlik göstergeleriniz yükseliş eğiliminde. Erken müdahale, uzun vadeli hasarı önler. İş yükünü azaltmayı ve daha sağlam sınırlar kurmayı değerlendirin.",
+      "trendImproving": "Tükenmişlik göstergeleriniz düşüş eğiliminde. Olumlu değişiklikler etkisini gösteriyor. İyileşme zamanınızı korumaya devam edin.",
+      "healthyPatterns": "Dijital çalışma patternleriniz sağlıklı görünüyor. Önemli bir tükenmişlik risk faktörü tespit edilmedi. Mevcut sınırlarınızı ve iyileşme pratiklerinizi sürdürün."
+    },
+    "noData": "Tükenmişlik verisi mevcut değil."
+  },
+  "apps": {
+    "title": "Uygulama Dağılımı",
+    "subtitle": "Kategori dağılımı ve uygulamalar arası zaman tahsisi",
+    "categoryDistribution": "Kategori Dağılımı",
+    "topCategories": "En Çok Kullanılan Kategoriler",
+    "totalTracked": "Toplam izlenen",
+    "across": "boyunca",
+    "events": "etkinlik",
+    "minutes": "dk",
+    "noData": "Uygulama verisi mevcut değil."
+  },
+  "timeline": {
+    "title": "Etkinlik Zaman Çizelgesi",
+    "subtitle": "Günlük üretken etkinlik yoğunluğunun tarihsel ısı haritası",
+    "activityHeatmap": "Etkinlik Isı Haritası",
+    "less": "Az",
+    "more": "Çok",
+    "productiveMin": "dk üretken",
+    "noData": "Zaman çizelgesi verisi mevcut değil."
+  },
+  "common": {
+    "brand": "AW Insights",
+    "tagline": "Dijital Yaşam Zekası",
+    "language": "Dil",
+    "privacyNote": "%100 Yerel ve Özel",
+    "hours": "s",
+    "minutes": "dk",
+    "seconds": "sn",
+    "days": "gün",
+    "score": "Puan",
+    "grade": "Derece",
+    "noData": "Veri yok",
+    "na": "YOK",
+    "none": "Hiçbiri",
+    "loading": "Yükleniyor...",
+    "of": "/",
+    "and": "ve",
+    "more": "Daha Fazla",
+    "less": "Daha Az",
+    "clear": "Temizle",
+    "close": "Kapat",
+    "back": "Geri",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "retry": "Tekrar Dene",
+    "error": "Hata",
+    "success": "Başarılı",
+    "warning": "Uyarı",
+    "info": "Bilgi",
+    "accessibility": {
+      "openSidebar": "Kenar çubuğunu aç",
+      "closeSidebar": "Kenar çubuğunu kapat"
+    }
+  }
+}
