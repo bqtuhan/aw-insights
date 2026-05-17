@@ -18,7 +18,7 @@ i18n
       loadPath: '/aw-insights/locales/{{lng}}/common.json',
     },
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['localStorage', 'htmlTag', 'navigator'],
       caches: ['localStorage'],
       lookupLocalStorage: 'aw-insights-language',
     },
