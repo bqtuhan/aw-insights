@@ -34,23 +34,62 @@
   "overview": {
     "title": "Analytics Overview",
     "subtitle": "High-level summary of your digital activity patterns",
-    "focusLevel": "Focus Level",
-    "flowVolume": "Flow Volume",
-    "burnoutRisk": "Burnout Risk",
-    "totalTracked": "Total Tracked",
-    "dailyTrend": "Daily Productivity & Burnout Trend",
-    "productiveMinLabel": "Productive min",
-    "burnoutScoreLabel": "Burnout Score",
+    "metrics": {
+      "focus": {
+        "title": "Focus Level",
+        "subtext": "Concentration depth"
+      },
+      "flow": {
+        "title": "Flow Volume",
+        "subtext": "Deep work time"
+      },
+      "burnout": {
+        "title": "Burnout Risk",
+        "subtext": "Fatigue indicator"
+      },
+      "tracked": {
+        "title": "Total Tracked",
+        "subtext": "Activity history"
+      }
+    },
+    "chart": {
+      "title": "Daily Productivity & Burnout Trend",
+      "yLeft": "Productive min",
+      "yRight": "Burnout Score",
+      "series": {
+        "productive": "Productive min",
+        "burnout": "Burnout Score"
+      }
+    },
     "noData": "No data available yet. Upload an ActivityWatch export to get started."
   },
   "focus": {
     "title": "Focus Analysis",
     "subtitle": "Context switching, session depth, and concentration patterns",
-    "focusScore": "Focus Score",
-    "totalSwitches": "Context Switches",
-    "deepFocusSessions": "Deep Focus Sessions",
-    "topDistractor": "Top Distractor",
-    "avgSession": "Avg Session Duration",
+    "metrics": {
+      "score": {
+        "title": "Focus Score",
+        "subtext": "Overall concentration"
+      },
+      "switches": {
+        "title": "Context Switches",
+        "subtext": "Interruptions detected"
+      },
+      "deep": {
+        "title": "Deep Focus Sessions",
+        "subtext": "High intensity blocks"
+      },
+      "distractor": {
+        "title": "Top Distractor",
+        "subtext": "Most frequent interruption"
+      }
+    },
+    "chart": {
+      "title": "Focus Intensity Distribution",
+      "series": {
+        "sessions": "Focus Sessions"
+      }
+    },
     "fragility": "Fragility Score",
     "distractingApps": "Most Distracting Apps",
     "sessionCount": "sessions tracked",
@@ -60,15 +99,35 @@
   "flow": {
     "title": "Flow State Analysis",
     "subtitle": "Deep work blocks, intensity curves, and peak productivity hours",
-    "totalFlow": "Total Flow Time",
-    "flowRatio": "Flow Ratio",
-    "avgBlock": "Average Flow Block",
-    "peakHour": "Peak Flow Hour",
+    "metrics": {
+      "total": {
+        "title": "Total Flow Time",
+        "subtext": "Aggregate deep work"
+      },
+      "ratio": {
+        "title": "Flow Ratio",
+        "subtext": "% of productive time"
+      },
+      "avg": {
+        "title": "Average Flow Block",
+        "subtext": "Duration per session"
+      },
+      "peak": {
+        "title": "Peak Flow Hour",
+        "subtext": "Most productive time"
+      }
+    },
+    "chart": {
+      "title": "Flow Distribution by Hour",
+      "empty": "No flow sessions detected",
+      "series": {
+        "minutes": "Flow Minutes"
+      }
+    },
     "flowSessions": "flow sessions detected",
     "ofProductive": "of productive time",
     "perSession": "per flow session",
     "mostFlowMinutes": "most flow minutes",
-    "hourlyDistribution": "Flow Distribution by Hour",
     "noData": "No flow data available."
   },
   "burnout": {
@@ -76,19 +135,40 @@
     "subtitle": "Multi-factor analysis based on work patterns and recovery indicators",
     "riskScore": "Burnout Risk Score",
     "riskLevel": "Risk Level",
-    "factorLateNight": "Late Night Work",
-    "factorOverload": "Weekly Overload",
-    "factorWeekend": "Weekend Intrusion",
-    "factorRecovery": "Recovery Deficit",
+    "factors": {
+      "lateNight": "Late Night Work",
+      "overload": "Weekly Overload",
+      "weekend": "Weekend Intrusion",
+      "recovery": "Recovery Deficit"
+    },
     "weight": "Weight",
     "recommendations": "Recommendations",
-    "riskLow": "Low",
-    "riskModerate": "Moderate",
-    "riskHigh": "High",
-    "riskCritical": "Critical",
-    "trendImproving": "Improving",
-    "trendStable": "Stable",
-    "trendWorsening": "Worsening",
+    "riskLevels": {
+      "low": "Low",
+      "moderate": "Moderate",
+      "high": "High",
+      "critical": "Critical"
+    },
+    "trends": {
+      "improving": "Improving",
+      "stable": "Stable",
+      "worsening": "Worsening"
+    },
+    "warnings": {
+      "lateNightSevere": "Severe late-night work pattern detected. Over 75% of your active days involve work between 10 PM and 6 AM. This disrupts circadian rhythm and impairs cognitive recovery.",
+      "lateNightModerate": "Moderate late-night work pattern. A significant portion of your work happens after 10 PM. Try shifting deep work to morning hours when possible.",
+      "overloadSevere": "Severe weekly overload. Your 7-day rolling work average far exceeds sustainable levels. Chronic overload is the strongest predictor of burnout.",
+      "overloadModerate": "Moderate weekly overload detected. Your average daily hours are above the recommended threshold. Consider implementing recharge days.",
+      "weekendSevere": "Severe weekend intrusion. Over 75% of your weekends show significant work activity. Continuous work without full rest days prevents psychological detachment.",
+      "weekendModerate": "Moderate weekend work detected. Regular work on weekends reduces recovery capacity. Aim for at least one completely work-free day per week.",
+      "recoverySevere": "Severe recovery deficit. You have had multiple consecutive high-load days without adequate rest. This pattern is unsustainable and leads to diminishing returns.",
+      "recoveryModerate": "Moderate recovery deficit. Your recent schedule shows limited recovery windows. Even short breaks between intense periods improve long-term resilience.",
+      "criticalRisk": "Critical burnout risk. Immediate intervention recommended. Your current patterns match clinical burnout profiles. Prioritise sleep, boundaries, and rest.",
+      "highRisk": "High burnout risk detected. Multiple risk factors are elevated. Proactive adjustment of work habits is strongly advised.",
+      "trendWorsening": "Your burnout indicators are trending upward. Early intervention prevents long-term damage. Consider reducing workload and establishing firmer boundaries.",
+      "trendImproving": "Your burnout indicators are trending downward. Positive changes are taking effect. Continue protecting your recovery time.",
+      "healthyPatterns": "Your digital work patterns appear healthy. No significant burnout risk factors detected. Maintain your current boundaries and recovery practices."
+    },
     "noData": "No burnout data available."
   },
   "apps": {
@@ -112,6 +192,10 @@
     "noData": "No timeline data available."
   },
   "common": {
+    "brand": "AW Insights",
+    "tagline": "Digital Life Intelligence",
+    "language": "Language",
+    "privacyNote": "100% Local & Private",
     "hours": "h",
     "minutes": "m",
     "seconds": "s",
@@ -119,6 +203,8 @@
     "score": "Score",
     "grade": "Grade",
     "noData": "No data",
+    "na": "N/A",
+    "none": "None",
     "loading": "Loading...",
     "of": "of",
     "and": "and",
@@ -133,31 +219,10 @@
     "error": "Error",
     "success": "Success",
     "warning": "Warning",
-    "info": "Info"
-  },
-  "a11y": {
-    "openSidebar": "Open sidebar",
-    "closeSidebar": "Close sidebar",
-    "navigateTo": "Navigate to {{section}}",
-    "fileUpload": "Upload ActivityWatch export file",
-    "dismiss": "Dismiss",
-    "menuToggle": "Toggle menu"
-  },
-  "burnout": {
-    "warnings": {
-      "lateNightSevere": "Severe late-night work pattern detected. Over 75% of your active days involve work between 10 PM and 6 AM. This disrupts circadian rhythm and impairs cognitive recovery.",
-      "lateNightModerate": "Moderate late-night work pattern. A significant portion of your work happens after 10 PM. Try shifting deep work to morning hours when possible.",
-      "overloadSevere": "Severe weekly overload. Your 7-day rolling work average far exceeds sustainable levels. Chronic overload is the strongest predictor of burnout.",
-      "overloadModerate": "Moderate weekly overload detected. Your average daily hours are above the recommended threshold. Consider implementing recharge days.",
-      "weekendSevere": "Severe weekend intrusion. Over 75% of your weekends show significant work activity. Continuous work without full rest days prevents psychological detachment.",
-      "weekendModerate": "Moderate weekend work detected. Regular work on weekends reduces recovery capacity. Aim for at least one completely work-free day per week.",
-      "recoverySevere": "Severe recovery deficit. You have had multiple consecutive high-load days without adequate rest. This pattern is unsustainable and leads to diminishing returns.",
-      "recoveryModerate": "Moderate recovery deficit. Your recent schedule shows limited recovery windows. Even short breaks between intense periods improve long-term resilience.",
-      "criticalRisk": "Critical burnout risk. Immediate intervention recommended. Your current patterns match clinical burnout profiles. Prioritise sleep, boundaries, and rest.",
-      "highRisk": "High burnout risk detected. Multiple risk factors are elevated. Proactive adjustment of work habits is strongly advised.",
-      "trendWorsening": "Your burnout indicators are trending upward. Early intervention prevents long-term damage. Consider reducing workload and establishing firmer boundaries.",
-      "trendImproving": "Your burnout indicators are trending downward. Positive changes are taking effect. Continue protecting your recovery time.",
-      "healthyPatterns": "Your digital work patterns appear healthy. No significant burnout risk factors detected. Maintain your current boundaries and recovery practices."
+    "info": "Info",
+    "accessibility": {
+      "openSidebar": "Open sidebar",
+      "closeSidebar": "Close sidebar"
     }
   }
 }

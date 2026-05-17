@@ -1,6 +1,5 @@
 import { useAnalyticsComputation } from '@/hooks/useAnalyticsComputation';
-import { useAppStore } from '@/store';
-import { getDictionary } from '@/i18n/dictionaries';
+import { useTranslation } from 'react-i18next';
 
 function FactorBar({
   label,
@@ -31,9 +30,8 @@ function FactorBar({
 }
 
 export function BurnoutSection() {
+  const { t } = useTranslation();
   const analytics = useAnalyticsComputation();
-  const language = useAppStore((s) => s.language);
-  const dict = getDictionary(language);
 
   if (!analytics) {
     return (
@@ -107,24 +105,24 @@ export function BurnoutSection() {
               fontWeight="600"
               style={{ textTransform: 'uppercase', letterSpacing: '1px' }}
             >
-              {ba.riskLevel}
+              {t(`burnout.riskLevels.${ba.riskLevel.toLowerCase()}`)}
             </text>
           </svg>
         </div>
 
         <div className="flex-1 w-full space-y-4">
-          <h3 className="text-lg font-semibold text-[#f0f4ff]">Burnout Risk Analysis</h3>
+          <h3 className="text-lg font-semibold text-[#f0f4ff]">{t('burnout.title')}</h3>
           <div className="grid grid-cols-1 gap-4">
-            <FactorBar label="Late Night Work" weight="35%" score={ba.factorScores.lateNightScore} />
-            <FactorBar label="Weekly Overload" weight="30%" score={ba.factorScores.overloadScore} />
-            <FactorBar label="Weekend Intrusion" weight="20%" score={ba.factorScores.weekendIntrusionScore} />
-            <FactorBar label="Recovery Deficit" weight="15%" score={ba.factorScores.recoveryDeficitScore} />
+            <FactorBar label={t('burnout.factors.lateNight')} weight="35%" score={ba.factorScores.lateNightScore} />
+            <FactorBar label={t('burnout.factors.overload')} weight="30%" score={ba.factorScores.overloadScore} />
+            <FactorBar label={t('burnout.factors.weekend')} weight="20%" score={ba.factorScores.weekendIntrusionScore} />
+            <FactorBar label={t('burnout.factors.recovery')} weight="15%" score={ba.factorScores.recoveryDeficitScore} />
           </div>
         </div>
       </div>
 
       <div className="rounded-2xl border border-[#1c2d4f] bg-[#0f1629] p-5">
-        <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">Recommendations</h3>
+        <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">{t('burnout.recommendations')}</h3>
         <div className="space-y-3">
           {ba.warnings.map((key, idx) => (
             <div
@@ -134,7 +132,7 @@ export function BurnoutSection() {
               <span className="mt-0.5 text-[#f59e0b] flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
               </span>
-              <p className="text-sm text-[#8899bb] leading-relaxed">{dict[key] ?? key}</p>
+              <p className="text-sm text-[#8899bb] leading-relaxed">{t(`burnout.warnings.${key}`)}</p>
             </div>
           ))}
         </div>

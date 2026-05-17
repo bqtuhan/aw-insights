@@ -11,8 +11,10 @@ import { useAppStore } from '@/store';
 import { categoryColors } from '@/lib/colors';
 import { DarkTooltip } from '@/lib/chartDefaults';
 import type { AppCategory } from '@/types';
+import { useTranslation } from 'react-i18next';
 
 export function AppsSection() {
+  const { t } = useTranslation();
   const analytics = useAnalyticsComputation();
   const windowEvents = useAppStore((s) => s.windowEvents);
 
@@ -57,7 +59,7 @@ export function AppsSection() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="rounded-2xl border border-[#1c2d4f] bg-[#0f1629] p-5">
-          <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">Category Distribution</h3>
+          <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">{t('apps.categoryDistribution')}</h3>
           <ResponsiveContainer width="100%" height={280}>
             <PieChart>
               <Pie
@@ -83,7 +85,7 @@ export function AppsSection() {
         </div>
 
         <div className="rounded-2xl border border-[#1c2d4f] bg-[#0f1629] p-5">
-          <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">Top Categories</h3>
+          <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">{t('apps.topCategories')}</h3>
           <div className="space-y-3">
             {data.map((cat) => (
               <div key={cat.name} className="space-y-1">
@@ -108,7 +110,7 @@ export function AppsSection() {
       
       <div className="rounded-2xl border border-[#1c2d4f] bg-[#0f1629] p-4 text-center">
         <span className="text-sm text-[#8899bb]">
-          Total tracked: <span className="text-[#f0f4ff] font-semibold">{totalMinutes}m</span> across {windowEvents.length} events
+          {t('apps.totalTracked')}: <span className="text-[#f0f4ff] font-semibold">{totalMinutes}m</span> {t('apps.across')} {windowEvents.length} {t('apps.events')}
         </span>
       </div>
     </div>

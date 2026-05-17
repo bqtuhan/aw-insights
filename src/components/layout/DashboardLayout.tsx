@@ -1,8 +1,10 @@
 import { useAppStore } from '@/store';
 import { Sidebar } from './Sidebar';
 import { Dropzone } from '@/components/ui/Dropzone';
+import { useTranslation } from 'react-i18next';
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const { t } = useTranslation();
   const status = useAppStore((s) => s.status);
 
   if (status === 'idle' || status === 'loading' || status === 'error') {
@@ -16,10 +18,10 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#00d4ff] to-[#a78bfa]">
                 <span className="text-sm font-bold text-white">AW</span>
               </div>
-              <span className="text-xl font-semibold text-[#f0f4ff] tracking-tight">AW Insights</span>
+              <span className="text-xl font-semibold text-[#f0f4ff] tracking-tight">{t('app.name')}</span>
             </div>
             <p className="text-sm text-[#8899bb]">
-              Digital Life Intelligence — Privacy-First Analytics
+              {t('app.tagline')}
             </p>
           </div>
           <Dropzone />

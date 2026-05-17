@@ -34,23 +34,62 @@
   "overview": {
     "title": "Analitik Genel Bakış",
     "subtitle": "Dijital etkinlik desenlerinizin üst düzey özeti",
-    "focusLevel": "Odaklanma Seviyesi",
-    "flowVolume": "Akış Hacmi",
-    "burnoutRisk": "Tükenmişlik Riski",
-    "totalTracked": "Toplam İzlenen",
-    "dailyTrend": "Günlük Üretkenlik ve Tükenmişlik Eğilimi",
-    "productiveMinLabel": "Üretken dk",
-    "burnoutScoreLabel": "Tükenmişlik Puanı",
+    "metrics": {
+      "focus": {
+        "title": "Odak Seviyesi",
+        "subtext": "Konsantrasyon derinliği"
+      },
+      "flow": {
+        "title": "Akış Hacmi",
+        "subtext": "Derin çalışma süresi"
+      },
+      "burnout": {
+        "title": "Tükenmişlik Riski",
+        "subtext": "Yorgunluk göstergesi"
+      },
+      "tracked": {
+        "title": "Toplam İzlenen",
+        "subtext": "Aktivite geçmişi"
+      }
+    },
+    "chart": {
+      "title": "Günlük Üretkenlik ve Tükenmişlik Eğilimi",
+      "yLeft": "Üretken dk",
+      "yRight": "Tükenmişlik Puanı",
+      "series": {
+        "productive": "Üretken dk",
+        "burnout": "Tükenmişlik Puanı"
+      }
+    },
     "noData": "Henüz veri yok. Başlamak için bir ActivityWatch dışa aktarımı yükleyin."
   },
   "focus": {
     "title": "Odaklanma Analizi",
     "subtitle": "Bağlam değiştirme, oturum derinliği ve konsantrasyon desenleri",
-    "focusScore": "Odaklanma Puanı",
-    "totalSwitches": "Bağlam Değiştirme",
-    "deepFocusSessions": "Derin Odaklanma Oturumları",
-    "topDistractor": "En Büyük Dikkat Dağıtıcı",
-    "avgSession": "Ortalama Oturum Süresi",
+    "metrics": {
+      "score": {
+        "title": "Odak Puanı",
+        "subtext": "Genel konsantrasyon"
+      },
+      "switches": {
+        "title": "Bağlam Değişiklikleri",
+        "subtext": "Tespit edilen kesintiler"
+      },
+      "deep": {
+        "title": "Derin Odaklanma Oturumları",
+        "subtext": "Yüksek yoğunluklu bloklar"
+      },
+      "distractor": {
+        "title": "En Büyük Dikkat Dağıtıcı",
+        "subtext": "En sık kesinti"
+      }
+    },
+    "chart": {
+      "title": "Odak Yoğunluğu Dağılımı",
+      "series": {
+        "sessions": "Odak Oturumları"
+      }
+    },
     "fragility": "Kırılganlık Puanı",
     "distractingApps": "En Çok Dikkat Dağıtan Uygulamalar",
     "sessionCount": "oturum izlendi",
@@ -60,15 +99,35 @@
   "flow": {
     "title": "Akış Durumu Analizi",
     "subtitle": "Derin çalışma blokları, yoğunluk eğrileri ve zirve üretkenlik saatleri",
-    "totalFlow": "Toplam Akış Süresi",
-    "flowRatio": "Akış Oranı",
-    "avgBlock": "Ortalama Akış Bloğu",
-    "peakHour": "Zirve Akış Saati",
+    "metrics": {
+      "total": {
+        "title": "Toplam Akış Süresi",
+        "subtext": "Toplam derin çalışma"
+      },
+      "ratio": {
+        "title": "Akış Oranı",
+        "subtext": "Üretken sürenin %'si"
+      },
+      "avg": {
+        "title": "Ortalama Akış Bloğu",
+        "subtext": "Oturum başına süre"
+      },
+      "peak": {
+        "title": "Zirve Akış Saati",
+        "subtext": "En üretken zaman"
+      }
+    },
+    "chart": {
+      "title": "Saatlik Akış Dağılımı",
+      "empty": "Akış oturumu tespit edilmedi",
+      "series": {
+        "minutes": "Akış Dakikaları"
+      }
+    },
     "flowSessions": "akış oturumu tespit edildi",
     "ofProductive": "üretken zamanın",
     "perSession": "akış oturumu başına",
     "mostFlowMinutes": "en fazla akış dakikası",
-    "hourlyDistribution": "Saatlik Akış Dağılımı",
     "noData": "Akış verisi mevcut değil."
   },
   "burnout": {
@@ -76,19 +135,40 @@
     "subtitle": "Çalışma desenleri ve iyileşme göstergelerine dayalı çok faktörlü analiz",
     "riskScore": "Tükenmişlik Risk Puanı",
     "riskLevel": "Risk Seviyesi",
-    "factorLateNight": "Gece Çalışması",
-    "factorOverload": "Haftalık Aşırı Yük",
-    "factorWeekend": "Hafta Sonu Müdahalesi",
-    "factorRecovery": "İyileşme Açığı",
+    "factors": {
+      "lateNight": "Gece Çalışması",
+      "overload": "Haftalık Aşırı Yük",
+      "weekend": "Hafta Sonu Müdahalesi",
+      "recovery": "İyileşme Açığı"
+    },
     "weight": "Ağırlık",
     "recommendations": "Öneriler",
-    "riskLow": "Düşük",
-    "riskModerate": "Orta",
-    "riskHigh": "Yüksek",
-    "riskCritical": "Kritik",
-    "trendImproving": "İyileşiyor",
-    "trendStable": "Durağan",
-    "trendWorsening": "Kötüleşiyor",
+    "riskLevels": {
+      "low": "Düşük",
+      "moderate": "Orta",
+      "high": "Yüksek",
+      "critical": "Kritik"
+    },
+    "trends": {
+      "improving": "İyileşiyor",
+      "stable": "Durağan",
+      "worsening": "Kötüleşiyor"
+    },
+    "warnings": {
+      "lateNightSevere": "Ciddi gece çalışma paterni tespit edildi. Aktif günlerinizin %75'inden fazlası saat 22:00 ile 06:00 arasında çalışma içeriyor. Bu durum sirkadiyen ritmi bozar ve bilişsel iyileşmeyi engeller.",
+      "lateNightModerate": "Orta düzeyde gece çalışma paterni. Çalışmalarınızın önemli bir kısmı saat 22:00'den sonra gerçekleşiyor. Derin çalışmaları mümkünse sabah saatlerine kaydırmayı deneyin.",
+      "overloadSevere": "Ciddi haftalık aşırı yüklenme. 7 günlük hareketli çalışma ortalamanız sürdürülebilir seviyelerin çok üzerinde. Kronik aşırı yüklenme, tükenmişliğin en güçlü öngörücüdür.",
+      "overloadModerate": "Orta düzeyde haftalık aşırı yüklenme tespit edildi. Günlük ortalama çalışma süreniz önerilen eşiğin üzerinde. Yenilenme günleri eklemeyi değerlendirin.",
+      "weekendSevere": "Ciddi hafta sonu müdahalesi. Hafta sonlarınızın %75'inden fazlası önemli çalışma aktivitesi gösteriyor. Tam dinlenme günleri olmadan sürekli çalışma, psikolojik ayrışmayı engeller.",
+      "weekendModerate": "Orta düzeyde hafta sonu çalışması tespit edildi. Hafta sonları düzenli çalışma, iyileşme kapasitesini azaltır. Haftada en az bir tamamen işten uzak gün hedefleyin.",
+      "recoverySevere": "Ciddi iyileşme açığı. Yeterli dinlenme olmadan birden fazla ardarda yüksek yüklü gün geçirdiniz. Bu pattern sürdürülemez ve azalan getirilere yol açar.",
+      "recoveryModerate": "Orta düzeyde iyileşme açığı. Son programınız sınırlı iyileşme pencereleri gösteriyor. Yoğun dönemler arasında kısa molalar bile uzun vadeli dayanıklılığı artırır.",
+      "criticalRisk": "Kritik tükenmişlik riski. Derhal müdahale önerilir. Mevcut patternleriniz klinik tükenmişlik profilleriyle eşleşiyor. Uyku, sınırlar ve dinlenmeye öncelik verin.",
+      "highRisk": "Yüksek tükenmişlik riski tespit edildi. Birden fazla risk faktörü yükselmişdurumda. Çalışma alışkanlıklarının proaktif olarak düzeltilmesi önemle tavsiye edilir.",
+      "trendWorsening": "Tükenmişlik göstergeleriniz yükseliş eğiliminde. Erken müdahale, uzun vadeli hasarı önler. İş yükünü azaltmayı ve daha sağlam sınırlar kurmayı değerlendirin.",
+      "trendImproving": "Tükenmişlik göstergeleriniz düşüş eğiliminde. Olumlu değişiklikler etkisini gösteriyor. İyileşme zamanınızı korumaya devam edin.",
+      "healthyPatterns": "Dijital çalışma patternleriniz sağlıklı görünüyor. Önemli bir tükenmişlik risk faktörü tespit edilmedi. Mevcut sınırlarınızı ve iyileşme pratiklerinizi sürdürün."
+    },
     "noData": "Tükenmişlik verisi mevcut değil."
   },
   "apps": {
@@ -112,6 +192,10 @@
     "noData": "Zaman çizelgesi verisi mevcut değil."
   },
   "common": {
+    "brand": "AW Insights",
+    "tagline": "Dijital Yaşam Zekası",
+    "language": "Dil",
+    "privacyNote": "%100 Yerel ve Özel",
     "hours": "s",
     "minutes": "dk",
     "seconds": "sn",
@@ -119,6 +203,8 @@
     "score": "Puan",
     "grade": "Derece",
     "noData": "Veri yok",
+    "na": "YOK",
+    "none": "Hiçbiri",
     "loading": "Yükleniyor...",
     "of": "/",
     "and": "ve",
@@ -133,29 +219,10 @@
     "error": "Hata",
     "success": "Başarılı",
     "warning": "Uyarı",
-    "info": "Bilgi"
-  },
-  "a11y": {
-    "openSidebar": "Kenar çubuğunu aç",
-    "closeSidebar": "Kenar çubuğunu kapat",
-    "navigateTo": "{{section}} bölümüne git",
-    "fileUpload": "ActivityWatch dışa aktarım dosyası yükle",
-    "dismiss": "Kapat",
-    "menuToggle": "Menüyü değiştir"
-  },
-  "warnings": {
-    "lateNightSevere": "Ciddi gece çalışma paterni tespit edildi. Aktif günlerinizin %75'inden fazlası saat 22:00 ile 06:00 arasında çalışma içeriyor. Bu durum sirkadiyen ritmi bozar ve bilişsel iyileşmeyi engeller.",
-    "lateNightModerate": "Orta düzeyde gece çalışma paterni. Çalışmalarınızın önemli bir kısmı saat 22:00'den sonra gerçekleşiyor. Derin çalışmaları mümkünse sabah saatlerine kaydırmayı deneyin.",
-    "overloadSevere": "Ciddi haftalık aşırı yüklenme. 7 günlük hareketli çalışma ortalamanız sürdürülebilir seviyelerin çok üzerinde. Kronik aşırı yüklenme, tükenmişliğin en güçlü öngörücüdür.",
-    "overloadModerate": "Orta düzeyde haftalık aşırı yüklenme tespit edildi. Günlük ortalama çalışma süreniz önerilen eşiğin üzerinde. Yenilenme günleri eklemeyi değerlendirin.",
-    "weekendSevere": "Ciddi hafta sonu müdahalesi. Hafta sonlarınızın %75'inden fazlası önemli çalışma aktivitesi gösteriyor. Tam dinlenme günleri olmadan sürekli çalışma, psikolojik ayrışmayı engeller.",
-    "weekendModerate": "Orta düzeyde hafta sonu çalışması tespit edildi. Hafta sonları düzenli çalışma, iyileşme kapasitesini azaltır. Haftada en az bir tamamen işten uzak gün hedefleyin.",
-    "recoverySevere": "Ciddi iyileşme açığı. Yeterli dinlenme olmadan birden fazla ardarda yüksek yüklü gün geçirdiniz. Bu pattern sürdürülemez ve azalan getirilere yol açar.",
-    "recoveryModerate": "Orta düzeyde iyileşme açığı. Son programınız sınırlı iyileşme pencereleri gösteriyor. Yoğun dönemler arasında kısa molalar bile uzun vadeli dayanıklılığı artırır.",
-    "criticalRisk": "Kritik tükenmişlik riski. Derhal müdahale önerilir. Mevcut patternleriniz klinik tükenmişlik profilleriyle eşleşiyor. Uyku, sınırlar ve dinlenmeye öncelik verin.",
-    "highRisk": "Yüksek tükenmişlik riski tespit edildi. Birden fazla risk faktörü yükselmişdurumda. Çalışma alışkanlıklarının proaktif olarak düzeltilmesi önemle tavsiye edilir.",
-    "trendWorsening": "Tükenmişlik göstergeleriniz yükseliş eğiliminde. Erken müdahale, uzun vadeli hasarı önler. İş yükünü azaltmayı ve daha sağlam sınırlar kurmayı değerlendirin.",
-    "trendImproving": "Tükenmişlik göstergeleriniz düşüş eğiliminde. Olumlu değişiklikler etkisini gösteriyor. İyileşme zamanınızı korumaya devam edin.",
-    "healthyPatterns": "Dijital çalışma patternleriniz sağlıklı görünüyor. Önemli bir tükenmişlik risk faktörü tespit edilmedi. Mevcut sınırlarınızı ve iyileşme pratiklerinizi sürdürün."
+    "info": "Bilgi",
+    "accessibility": {
+      "openSidebar": "Kenar çubuğunu aç",
+      "closeSidebar": "Kenar çubuğunu kapat"
+    }
   }
 }

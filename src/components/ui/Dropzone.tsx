@@ -2,8 +2,10 @@ import { useState, useRef, useCallback } from 'react';
 import { useDatasetProcessor } from '@/hooks/useDatasetProcessor';
 import { useAppStore } from '@/store';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 export function Dropzone() {
+  const { t } = useTranslation();
   const { processFile, cancelProcessing, status, progressMessage } = useDatasetProcessor();
   const storeError = useAppStore((s) => s.error);
   const [isDragOver, setIsDragOver] = useState(false);
@@ -85,7 +87,7 @@ export function Dropzone() {
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#1a0f14] ring-1 ring-[#f43f5e]/30">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
           </div>
-          <h3 className="text-lg font-semibold text-[#f43f5e] mb-2">Import Failed</h3>
+          <h3 className="text-lg font-semibold text-[#f43f5e] mb-2">{t('upload.error')}</h3>
           <p className="text-sm text-[#8899bb] mb-6">
             {errorDetails?.message || storeError?.message || 'An unexpected error occurred while processing your file.'}
           </p>
@@ -94,7 +96,7 @@ export function Dropzone() {
             className="inline-flex items-center gap-2 rounded-xl bg-[#1a0f14] border border-[#f43f5e]/30 px-5 py-2.5 text-sm font-medium text-[#f43f5e] hover:bg-[#f43f5e]/10 transition-colors"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2v6h-6M3 12a9 9 0 0 1 15-6.7L21 8M3 22v-6h6M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
-            Try Again
+            {t('upload.retry')}
           </button>
         </div>
       </div>
@@ -116,8 +118,8 @@ export function Dropzone() {
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
             </svg>
           </div>
-          <h3 className="text-lg font-semibold text-[#f0f4ff] mb-2">Processing Your Data</h3>
-          <p className="text-sm text-[#8899bb] mb-4">{progressMessage || 'Parsing events...'}</p>
+          <h3 className="text-lg font-semibold text-[#f0f4ff] mb-2">{t('upload.processing')}</h3>
+          <p className="text-sm text-[#8899bb] mb-4">{progressMessage || t('upload.parsing')}</p>
           <div className="w-full h-1.5 rounded-full bg-[#1c2d4f] overflow-hidden">
             <div className="h-full rounded-full bg-gradient-to-r from-[#00d4ff] to-[#a78bfa] animate-pulse w-2/3" />
           </div>
@@ -125,7 +127,7 @@ export function Dropzone() {
             onClick={cancelProcessing}
             className="mt-6 text-xs text-[#4a5a7a] hover:text-[#8899bb] transition-colors"
           >
-            Cancel
+            {t('upload.cancel')}
           </button>
         </div>
       </div>
@@ -139,8 +141,8 @@ export function Dropzone() {
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#0a1a10] ring-1 ring-[#10b981]/30">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
-          <h3 className="text-lg font-semibold text-[#10b981] mb-1">Import Complete</h3>
-          <p className="text-sm text-[#8899bb]">Your dashboard is ready. Loading analytics...</p>
+          <h3 className="text-lg font-semibold text-[#10b981] mb-1">{t('upload.success')}</h3>
+          <p className="text-sm text-[#8899bb]">{t('upload.successMessage')}</p>
         </div>
       </div>
     );
@@ -174,18 +176,18 @@ export function Dropzone() {
         </div>
 
         <h3 className="text-lg font-semibold text-[#f0f4ff] mb-2">
-          Drop your ActivityWatch export
+          {t('upload.title')}
         </h3>
         <p className="text-sm text-[#8899bb] mb-2">
-          Drag & drop your JSON file here, or click to browse
+          {t('upload.subtitle')}
         </p>
         <p className="text-[11px] text-[#4a5a7a]">
-          .json files only · 100% private · No data leaves your device
+          {t('upload.fileHint')}
         </p>
 
         <div className="mt-6 inline-flex items-center gap-2 rounded-lg border border-[#1c2d4f] bg-[#0f1629] px-4 py-2 text-xs text-[#4a5a7a]">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          All processing happens locally in your browser
+          {t('upload.privacyNote')}
         </div>
       </div>
     </div>
