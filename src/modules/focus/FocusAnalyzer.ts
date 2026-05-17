@@ -155,15 +155,13 @@ export class FocusAnalyzer
 
   /**
    * Returns the total number of tracked hours across the dataset.
-   * Computed as the difference between the very first event start and the very
-   * last event end, converted to hours. This represents the **span** of tracking,
-   * not the sum of event durations.
+   * Computed as the sum of all event durations (not the calendar span).
+   * This gives a more accurate representation of actual active tracking time.
    */
   private totalTrackedHours(events: NormalizedWindowEvent[]): number {
     if (events.length === 0) return 0;
-    const first = events[0]!.startTime.getTime();
-    const last = events[events.length - 1]!.endTime.getTime();
-    return (last - first) / 3600000;
+    const totalMs = events.reduce((sum, e) => sum + e.durationMs, 0);
+    return totalMs / 3600000;
   }
 
   /**
