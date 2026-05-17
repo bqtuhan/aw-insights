@@ -142,5 +142,20 @@
     "fileUpload": "ActivityWatch dışa aktarım dosyası yükle",
     "dismiss": "Kapat",
     "menuToggle": "Menüyü değiştir"
+  },
+  "warnings": {
+    "lateNightSevere": "Ciddi gece çalışma paterni tespit edildi. Aktif günlerinizin %75'inden fazlası saat 22:00 ile 06:00 arasında çalışma içeriyor. Bu durum sirkadiyen ritmi bozar ve bilişsel iyileşmeyi engeller.",
+    "lateNightModerate": "Orta düzeyde gece çalışma paterni. Çalışmalarınızın önemli bir kısmı saat 22:00'den sonra gerçekleşiyor. Derin çalışmaları mümkünse sabah saatlerine kaydırmayı deneyin.",
+    "overloadSevere": "Ciddi haftalık aşırı yüklenme. 7 günlük hareketli çalışma ortalamanız sürdürülebilir seviyelerin çok üzerinde. Kronik aşırı yüklenme, tükenmişliğin en güçlü öngörücüdür.",
+    "overloadModerate": "Orta düzeyde haftalık aşırı yüklenme tespit edildi. Günlük ortalama çalışma süreniz önerilen eşiğin üzerinde. Yenilenme günleri eklemeyi değerlendirin.",
+    "weekendSevere": "Ciddi hafta sonu müdahalesi. Hafta sonlarınızın %75'inden fazlası önemli çalışma aktivitesi gösteriyor. Tam dinlenme günleri olmadan sürekli çalışma, psikolojik ayrışmayı engeller.",
+    "weekendModerate": "Orta düzeyde hafta sonu çalışması tespit edildi. Hafta sonları düzenli çalışma, iyileşme kapasitesini azaltır. Haftada en az bir tamamen işten uzak gün hedefleyin.",
+    "recoverySevere": "Ciddi iyileşme açığı. Yeterli dinlenme olmadan birden fazla ardarda yüksek yüklü gün geçirdiniz. Bu pattern sürdürülemez ve azalan getirilere yol açar.",
+    "recoveryModerate": "Orta düzeyde iyileşme açığı. Son programınız sınırlı iyileşme pencereleri gösteriyor. Yoğun dönemler arasında kısa molalar bile uzun vadeli dayanıklılığı artırır.",
+    "criticalRisk": "Kritik tükenmişlik riski. Derhal müdahale önerilir. Mevcut patternleriniz klinik tükenmişlik profilleriyle eşleşiyor. Uyku, sınırlar ve dinlenmeye öncelik verin.",
+    "highRisk": "Yüksek tükenmişlik riski tespit edildi. Birden fazla risk faktörü yükselmişdurumda. Çalışma alışkanlıklarının proaktif olarak düzeltilmesi önemle tavsiye edilir.",
+    "trendWorsening": "Tükenmişlik göstergeleriniz yükseliş eğiliminde. Erken müdahale, uzun vadeli hasarı önler. İş yükünü azaltmayı ve daha sağlam sınırlar kurmayı değerlendirin.",
+    "trendImproving": "Tükenmişlik göstergeleriniz düşüş eğiliminde. Olumlu değişiklikler etkisini gösteriyor. İyileşme zamanınızı korumaya devam edin.",
+    "healthyPatterns": "Dijital çalışma patternleriniz sağlıklı görünüyor. Önemli bir tükenmişlik risk faktörü tespit edilmedi. Mevcut sınırlarınızı ve iyileşme pratiklerinizi sürdürün."
   }
 }

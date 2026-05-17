@@ -1,6 +1,7 @@
 import { useAppStore } from '@/store';
 import type { SectionId } from '@/store/types';
 import { cn } from '@/lib/utils';
+import { usePreferences } from '@/hooks/usePrefences';
 
 const navItems: { id: SectionId; label: string; icon: string }[] = [
   { id: 'overview', label: 'Overview', icon: 'layout-dashboard' },
@@ -37,6 +38,7 @@ export function Sidebar() {
   const setSection = useAppStore((s) => s.setSection);
   const sidebarOpen = useAppStore((s) => s.sidebarOpen);
   const toggleSidebar = useAppStore((s) => s.toggleSidebar);
+  const { language, updateLanguage } = usePreferences();
 
   const handleNavClick = (section: SectionId) => {
     setSection(section);
@@ -100,8 +102,27 @@ export function Sidebar() {
           })}
         </nav>
 
-        <div className="border-t border-[#1c2d4f] px-5 py-3">
-          <span className="text-[10px] text-[#4a5a7a] uppercase tracking-widest">
+        <div className="border-t border-[#1c2d4f] px-5 py-3 space-y-3">
+          <div>
+            <label className="text-[10px] text-[#4a5a7a] uppercase tracking-widest block mb-2">
+              Language
+            </label>
+            <select
+              value={language}
+              onChange={(e) => updateLanguage(e.target.value)}
+              className="w-full px-2 py-1.5 text-xs bg-[#0f1629] border border-[#1c2d4f] rounded text-[#f0f4ff] hover:border-[#00d4ff] transition-colors cursor-pointer"
+            >
+              <option value="en">English</option>
+              <option value="tr">Türkçe</option>
+              <option value="de">Deutsch</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="ja">日本語</option>
+              <option value="zh">中文</option>
+              <option value="pt">Português</option>
+            </select>
+          </div>
+          <span className="text-[10px] text-[#4a5a7a] uppercase tracking-widest block">
             Privacy-First · Zero Telemetry
           </span>
         </div>
