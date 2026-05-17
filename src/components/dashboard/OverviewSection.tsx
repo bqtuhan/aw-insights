@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   ComposedChart,
   Area,
@@ -42,6 +43,7 @@ function buildProgressiveBurnout(dailyAggregates: DailySummary[]) {
 }
 
 export function OverviewSection() {
+  const { t } = useTranslation();
   const analytics = useAnalyticsComputation();
 
   const chartData = useMemo(() => {
@@ -77,36 +79,41 @@ export function OverviewSection() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <MetricCard
-          title="Focus Level"
+          title={t('overview.metrics.focus.title')}
           value={focusAnalysis.overallScore}
-          subtext={`${focusAnalysis.totalSwitches} switches · ${focusAnalysis.deepFocusSessionCount} deep sessions`}
+          subtext={t('overview.metrics.focus.subtext', { 
+            switches: focusAnalysis.totalSwitches, 
+            sessions: focusAnalysis.deepFocusSessionCount 
+          })}
           score={focusAnalysis.overallScore}
           invertScore={true}
         />
         <MetricCard
-          title="Flow Volume"
+          title={t('overview.metrics.flow.title')}
           value={`${Math.round(flowAnalysis.totalFlowMinutes)}m`}
-          subtext={`${(flowAnalysis.flowRatio * 100).toFixed(0)}% of productive time`}
+          subtext={t('overview.metrics.flow.subtext', { 
+            percent: (flowAnalysis.flowRatio * 100).toFixed(0) 
+          })}
           status="success"
         />
         <MetricCard
-          title="Burnout Risk"
+          title={t('overview.metrics.burnout.title')}
           value={burnoutAnalysis.burnoutScore}
-          subtext={burnoutAnalysis.riskLevel.toUpperCase()}
+          subtext={t(`burnout.riskLevels.${burnoutAnalysis.riskLevel.toLowerCase()}`).toUpperCase()}
           score={burnoutAnalysis.burnoutScore}
           invertScore={false}
         />
         <MetricCard
-          title="Total Tracked"
+          title={t('overview.metrics.tracked.title')}
           value={`${Math.round(totalTrackedMinutes / 60)}h`}
-          subtext={`across ${totalDays} active days`}
+          subtext={t('overview.metrics.tracked.subtext', { days: totalDays })}
           status="neutral"
         />
       </div>
 
       <div className="rounded-2xl border border-[#1c2d4f] bg-[#0f1629] p-5">
         <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">
-          Daily Productivity & Burnout Trend
+          {t('overview.chart.title')}
         </h3>
         <ResponsiveContainer width="100%" height={320}>
           <ComposedChart data={chartData} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
@@ -123,7 +130,7 @@ export function OverviewSection() {
               yAxisId="left"
               {...yAxisDefaults}
               label={{
-                value: 'Productive min',
+                value: t('overview.chart.yLeft'),
                 angle: -90,
                 position: 'insideLeft',
                 fill: '#8899bb',
@@ -136,7 +143,7 @@ export function OverviewSection() {
               {...yAxisDefaults}
               domain={[0, 100]}
               label={{
-                value: 'Burnout Score',
+                value: t('overview.chart.yRight'),
                 angle: 90,
                 position: 'insideRight',
                 fill: '#f43f5e',
@@ -151,7 +158,7 @@ export function OverviewSection() {
               stroke="#00d4ff"
               fill="url(#cyanGradient)"
               strokeWidth={2}
-              name="Productive minutes"
+              name={t('overview.chart.series.productive')}
             />
             <defs>
               <linearGradient id="cyanGradient" x1="0" y1="0" x2="0" y2="1">
@@ -166,7 +173,7 @@ export function OverviewSection() {
               stroke="#f43f5e"
               strokeWidth={2}
               dot={false}
-              name="Burnout Score"
+              name={t('overview.chart.series.burnout')}
               strokeDasharray="4 4"
             />
           </ComposedChart>

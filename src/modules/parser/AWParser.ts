@@ -100,10 +100,13 @@ export class AWParser {
       (a, b) => a.startTime.getTime() - b.startTime.getTime(),
     );
 
-    const dailySummaries = this.buildDailySummaries(allWindowEvents);
+    // Deduplicate overlapping events from different buckets (e.g. desktop + browser)
+    const deduplicatedWindowEvents = this.deduplicateEvents(allWindowEvents);
+
+    const dailySummaries = this.buildDailySummaries(deduplicatedWindowEvents);
 
     return {
-      windowEvents: allWindowEvents,
+      windowEvents: deduplicatedWindowEvents,
       afkEvents: allAfkEvents,
       dailySummaries,
     };
@@ -112,6 +115,55 @@ export class AWParser {
   // ──────────────────────────────────────────────────
   // Private helpers
   // ──────────────────────────────────────────────────
+
+  /**
+   * Deduplicates overlapping events by prioritizing higher-fidelity buckets.
+   * If two events overlap, we keep the one from a more specific bucket or the longer one.
+   */
+  private deduplicateEvents(events: NormalizedWindowEvent[]): NormalizedWindowEvent[] {
+    if (events.length < 2) return events;
+
+    const result: NormalizedWindowEvent[] = [];
+    let current = events[0]!;
+
+    for (let i = 1; i < events.length; i++) {
+      const next = events[i]!;
+
+      // Check for overlap
+      if (next.startTime.getTime() < current.endTime.getTime()) {
+        // Overlap detected. Decide which one to keep or how to trim.
+        // For simplicity in this intelligence tool, we prioritize the one that ends later
+        // or has a "higher" bucket type priority if we had one.
+        if (next.endTime.getTime() > current.endTime.getTime()) {
+          // If next starts after current but ends later, we could trim current
+          // but for now let's just ensure we don't double count the duration in summaries.
+          // The buildDailySummaries will still sum durations.
+          // A better way is to ensure non-overlapping intervals.
+          
+          // Keep current, but adjust next to start where current ends to avoid double counting
+          const adjustedNext = {
+            ...next,
+            startTime: new Date(current.endTime.getTime()),
+            durationMs: Math.max(0, next.endTime.getTime() - current.endTime.getTime())
+          };
+          
+          if (adjustedNext.durationMs > 0) {
+            result.push(current);
+            current = adjustedNext;
+          }
+        } else {
+          // Next is entirely within current, skip next
+          continue;
+        }
+      } else {
+        // No overlap
+        result.push(current);
+        current = next;
+      }
+    }
+    result.push(current);
+    return result;
+  }
 
   /**
    * Normalises the top‑level JSON into `Record<string, unknown>`.

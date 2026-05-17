@@ -2,14 +2,15 @@ import { useAppStore } from '@/store';
 import type { SectionId } from '@/store/types';
 import { cn } from '@/lib/utils';
 import { usePreferences } from '@/hooks/usePrefences';
+import { useTranslation } from 'react-i18next';
 
-const navItems: { id: SectionId; label: string; icon: string }[] = [
-  { id: 'overview', label: 'Overview', icon: 'layout-dashboard' },
-  { id: 'focus', label: 'Focus', icon: 'target' },
-  { id: 'flow', label: 'Flow', icon: 'zap' },
-  { id: 'burnout', label: 'Burnout', icon: 'flame' },
-  { id: 'apps', label: 'Apps', icon: 'bar-chart-3' },
-  { id: 'timeline', label: 'Timeline', icon: 'calendar' },
+const navItems: { id: SectionId; labelKey: string; icon: string }[] = [
+  { id: 'overview', labelKey: 'nav.overview', icon: 'layout-dashboard' },
+  { id: 'focus', labelKey: 'nav.focus', icon: 'target' },
+  { id: 'flow', labelKey: 'nav.flow', icon: 'zap' },
+  { id: 'burnout', labelKey: 'nav.burnout', icon: 'flame' },
+  { id: 'apps', labelKey: 'nav.apps', icon: 'bar-chart-3' },
+  { id: 'timeline', labelKey: 'nav.timeline', icon: 'calendar' },
 ];
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -34,6 +35,7 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export function Sidebar() {
+  const { t } = useTranslation();
   const currentSection = useAppStore((s) => s.currentSection);
   const setSection = useAppStore((s) => s.setSection);
   const sidebarOpen = useAppStore((s) => s.sidebarOpen);
@@ -66,8 +68,8 @@ export function Sidebar() {
             <span className="text-sm font-bold text-white">AW</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-semibold text-[#f0f4ff] tracking-wide">AW Insights</span>
-            <span className="text-[10px] text-[#4a5a7a]">Digital Life Intelligence</span>
+            <span className="text-sm font-semibold text-[#f0f4ff] tracking-wide">{t('common.brand')}</span>
+            <span className="text-[10px] text-[#4a5a7a]">{t('common.tagline')}</span>
           </div>
         </div>
 
@@ -93,7 +95,7 @@ export function Sidebar() {
                 >
                   {iconMap[item.icon]}
                 </span>
-                <span>{item.label}</span>
+                <span>{t(item.labelKey)}</span>
                 {isActive && (
                   <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#00d4ff] shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
                 )}
@@ -105,7 +107,7 @@ export function Sidebar() {
         <div className="border-t border-[#1c2d4f] px-5 py-3 space-y-3">
           <div>
             <label className="text-[10px] text-[#4a5a7a] uppercase tracking-widest block mb-2">
-              Language
+              {t('common.language')}
             </label>
             <select
               value={language}
@@ -123,7 +125,7 @@ export function Sidebar() {
             </select>
           </div>
           <span className="text-[10px] text-[#4a5a7a] uppercase tracking-widest block">
-            Privacy-First · Zero Telemetry
+            {t('common.privacyNote')}
           </span>
         </div>
       </aside>
@@ -135,7 +137,7 @@ export function Sidebar() {
           'lg:hidden',
           sidebarOpen && 'hidden',
         )}
-        aria-label="Open sidebar"
+        aria-label={t('common.accessibility.openSidebar')}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
       </button>
