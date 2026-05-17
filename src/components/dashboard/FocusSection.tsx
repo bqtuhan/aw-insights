@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   BarChart,
   Bar,
@@ -31,6 +32,7 @@ function getTopDistractingApps(
 }
 
 export function FocusSection() {
+  const { t } = useTranslation();
   const analytics = useAnalyticsComputation();
 
   const topApps = useMemo(() => {
@@ -52,40 +54,40 @@ export function FocusSection() {
   }
 
   const fa = analytics.focusAnalysis;
-  const mostSwitchedCategory = topApps.length > 0 ? topApps[0]!.name : 'None';
+  const mostSwitchedCategory = topApps.length > 0 ? topApps[0]!.name : t('common.none');
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <MetricCard
-          title="Focus Score"
+          title={t('focus.metrics.score.title')}
           value={fa.overallScore}
-          subtext={`Fragility: ${fa.fragilityScore}`}
+          subtext={t('focus.metrics.score.subtext', { score: fa.fragilityScore })}
           score={fa.overallScore}
           invertScore={true}
         />
         <MetricCard
-          title="Switches"
+          title={t('focus.metrics.switches.title')}
           value={fa.totalSwitches}
-          subtext={`${fa.sessionCount} sessions tracked`}
+          subtext={t('focus.metrics.switches.subtext', { count: fa.sessionCount })}
           status="warning"
         />
         <MetricCard
-          title="Deep Focus"
+          title={t('focus.metrics.deep.title')}
           value={fa.deepFocusSessionCount}
-          subtext={`Avg session: ${fa.averageSessionDurationMinutes}m`}
+          subtext={t('focus.metrics.deep.subtext', { time: fa.averageSessionDurationMinutes })}
           status="success"
         />
         <MetricCard
-          title="Top Distractor"
+          title={t('focus.metrics.distractor.title')}
           value={mostSwitchedCategory}
-          subtext="Most context switches"
+          subtext={t('focus.metrics.distractor.subtext')}
           status="neutral"
         />
       </div>
 
       <div className="rounded-2xl border border-[#1c2d4f] bg-[#0f1629] p-5">
-        <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">Top 5 Distracting Apps by Session Count</h3>
+        <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">{t('focus.chart.title')}</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={topApps} layout="vertical" margin={{ top: 0, right: 16, left: 16, bottom: 0 }}>
             <CartesianGrid {...gridDefaults} />
@@ -98,7 +100,7 @@ export function FocusSection() {
               tick={{ fill: '#8899bb', fontSize: 11 }}
             />
             <Tooltip content={DarkTooltip as any} />
-            <Bar dataKey="count" fill="#a78bfa" radius={[0, 6, 6, 0]} barSize={16} name="Sessions" />
+            <Bar dataKey="count" fill="#a78bfa" radius={[0, 6, 6, 0]} barSize={16} name={t('focus.chart.series.sessions')} />
           </BarChart>
         </ResponsiveContainer>
       </div>

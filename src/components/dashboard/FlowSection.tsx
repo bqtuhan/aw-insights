@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   BarChart,
   Bar,
@@ -16,6 +17,7 @@ import {
 } from '@/lib/chartDefaults';
 
 export function FlowSection() {
+  const { t } = useTranslation();
   const analytics = useAnalyticsComputation();
 
   if (!analytics) {
@@ -32,7 +34,7 @@ export function FlowSection() {
   }
 
   const fl = analytics.flowAnalysis;
-  const peakHourLabel = fl.peakHours.length > 0 ? `${fl.peakHours[0]!.hour}:00` : 'N/A';
+  const peakHourLabel = fl.peakHours.length > 0 ? `${fl.peakHours[0]!.hour}:00` : t('common.na');
 
   const chartData = [...fl.peakHours].sort((a, b) => a.hour - b.hour);
 
@@ -40,33 +42,33 @@ export function FlowSection() {
     <div className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <MetricCard
-          title="Total Flow"
+          title={t('flow.metrics.total.title')}
           value={`${Math.round(fl.totalFlowMinutes)}m`}
-          subtext={`${fl.flowSessionCount} flow sessions`}
+          subtext={t('flow.metrics.total.subtext', { count: fl.flowSessionCount })}
           status="success"
         />
         <MetricCard
-          title="Flow Ratio"
+          title={t('flow.metrics.ratio.title')}
           value={`${(fl.flowRatio * 100).toFixed(0)}%`}
-          subtext="of productive time"
+          subtext={t('flow.metrics.ratio.subtext')}
           status="success"
         />
         <MetricCard
-          title="Avg Block"
+          title={t('flow.metrics.avg.title')}
           value={`${fl.averageFlowDurationMinutes}m`}
-          subtext="per flow session"
+          subtext={t('flow.metrics.avg.subtext')}
           status="neutral"
         />
         <MetricCard
-          title="Peak Hour"
+          title={t('flow.metrics.peak.title')}
           value={peakHourLabel}
-          subtext="most flow minutes"
+          subtext={t('flow.metrics.peak.subtext')}
           status="neutral"
         />
       </div>
 
       <div className="rounded-2xl border border-[#1c2d4f] bg-[#0f1629] p-5">
-        <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">Top Intensity Windows (Peak Hours)</h3>
+        <h3 className="text-sm font-semibold text-[#f0f4ff] mb-4">{t('flow.chart.title')}</h3>
         {chartData.length > 0 ? (
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData} margin={{ top: 10, right: 8, left: 0, bottom: 0 }}>
@@ -74,12 +76,12 @@ export function FlowSection() {
               <XAxis dataKey="hour" stroke="#4a5a7a" fontSize={11} tickFormatter={(h: number) => `${h}:00`} />
               <YAxis {...yAxisDefaults} />
               <Tooltip content={DarkTooltip as any} />
-              <Bar dataKey="minutes" fill="#00d4ff" radius={[6, 6, 0, 0]} barSize={40} name="Flow minutes" />
+              <Bar dataKey="minutes" fill="#00d4ff" radius={[6, 6, 0, 0]} barSize={40} name={t('flow.chart.series.minutes')} />
             </BarChart>
           </ResponsiveContainer>
         ) : (
           <div className="flex h-64 items-center justify-center text-sm text-[#4a5a7a]">
-            No profound flow blocks captured to compute peak windows.
+            {t('flow.chart.empty')}
           </div>
         )}
       </div>
