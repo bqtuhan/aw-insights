@@ -121,7 +121,7 @@ export class FlowDetector
   getDefaultConfig(): FlowConfig {
     return {
       minDurationMinutes: 25,
-      maxInterruptionSeconds: 180,
+      maxInterruptionSeconds: 600,
       productiveCategories: [
         'Development',
         'Design',
