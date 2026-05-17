@@ -15,7 +15,7 @@ i18n
       escapeValue: false,
     },
     backend: {
-      loadPath: './locales/{{lng}}/common.json',
+      loadPath: '/aw-insights/locales/{{lng}}/common.json',
     },
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
