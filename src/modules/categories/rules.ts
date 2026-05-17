@@ -209,6 +209,9 @@ export const RULE_SET: CategoryRule[] = [
   // Manus app (productivity/work tool)
   { pattern: /\b(manus|tech\.butterfly\.app)\b/i, category: 'Productivity' },
   { pattern: /tech\.butterfly\.app/i, category: 'Productivity' },
+  
+  // AI assistants & productivity tools
+  { pattern: /\b(chatgpt|claude|deepseek|copilot|gemini)\b/i, category: 'Productivity' },
 
   // ──────────────────────────────────────────────
   // SYSTEM — OS Settings, File Managers, Utilities
