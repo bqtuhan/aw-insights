@@ -126,6 +126,7 @@ export class FlowDetector
         'Development',
         'Design',
         'Productivity',
+        'Communication',
       ],
     };
   }
