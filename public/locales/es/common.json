@@ -34,23 +34,62 @@
   "overview": {
     "title": "Descripción General de Análisis",
     "subtitle": "Resumen de alto nivel de tus patrones de actividad digital",
-    "focusLevel": "Nivel de Enfoque",
-    "flowVolume": "Volumen de Flujo",
-    "burnoutRisk": "Riesgo de Agotamiento",
-    "totalTracked": "Total Rastreado",
-    "dailyTrend": "Tendencia Diaria de Productividad y Agotamiento",
-    "productiveMinLabel": "Min productivos",
-    "burnoutScoreLabel": "Puntuación de Agotamiento",
+    "metrics": {
+      "focus": {
+        "title": "Focus Level",
+        "subtext": "Concentration depth"
+      },
+      "flow": {
+        "title": "Flow Volume",
+        "subtext": "Deep work time"
+      },
+      "burnout": {
+        "title": "Burnout Risk",
+        "subtext": "Fatigue indicator"
+      },
+      "tracked": {
+        "title": "Total Tracked",
+        "subtext": "Activity history"
+      }
+    },
+    "chart": {
+      "title": "Daily Productivity & Burnout Trend",
+      "yLeft": "Productive min",
+      "yRight": "Burnout Score",
+      "series": {
+        "productive": "Productive min",
+        "burnout": "Burnout Score"
+      }
+    },
     "noData": "Sin datos disponibles aún. Carga una exportación de ActivityWatch para comenzar."
   },
   "focus": {
     "title": "Análisis de Enfoque",
     "subtitle": "Cambios de contexto, profundidad de sesión y patrones de concentración",
-    "focusScore": "Puntuación de Enfoque",
-    "totalSwitches": "Cambios de Contexto",
-    "deepFocusSessions": "Sesiones de Enfoque Profundo",
-    "topDistractor": "Principal Distracción",
-    "avgSession": "Duración Promedio de Sesión",
+    "metrics": {
+      "score": {
+        "title": "Focus Score",
+        "subtext": "Overall concentration"
+      },
+      "switches": {
+        "title": "Context Switches",
+        "subtext": "Interruptions detected"
+      },
+      "deep": {
+        "title": "Deep Focus Sessions",
+        "subtext": "High intensity blocks"
+      },
+      "distractor": {
+        "title": "Top Distractor",
+        "subtext": "Most frequent interruption"
+      }
+    },
+    "chart": {
+      "title": "Focus Intensity Distribution",
+      "series": {
+        "sessions": "Focus Sessions"
+      }
+    },
     "fragility": "Puntuación de Fragilidad",
     "distractingApps": "Aplicaciones Más Distractoras",
     "sessionCount": "sesiones rastreadas",
@@ -60,15 +99,35 @@
   "flow": {
     "title": "Análisis del Estado de Flujo",
     "subtitle": "Bloques de trabajo profundo, curvas de intensidad y horas de productividad máxima",
-    "totalFlow": "Tiempo Total de Flujo",
-    "flowRatio": "Proporción de Flujo",
-    "avgBlock": "Bloque de Flujo Promedio",
-    "peakHour": "Hora de Flujo Máximo",
+    "metrics": {
+      "total": {
+        "title": "Total Flow Time",
+        "subtext": "Aggregate deep work"
+      },
+      "ratio": {
+        "title": "Flow Ratio",
+        "subtext": "% of productive time"
+      },
+      "avg": {
+        "title": "Average Flow Block",
+        "subtext": "Duration per session"
+      },
+      "peak": {
+        "title": "Peak Flow Hour",
+        "subtext": "Most productive time"
+      }
+    },
+    "chart": {
+      "title": "Flow Distribution by Hour",
+      "empty": "No flow sessions detected",
+      "series": {
+        "minutes": "Flow Minutes"
+      }
+    },
     "flowSessions": "sesiones de flujo detectadas",
     "ofProductive": "del tiempo productivo",
     "perSession": "por sesión de flujo",
     "mostFlowMinutes": "más minutos de flujo",
-    "hourlyDistribution": "Distribución de Flujo por Hora",
     "noData": "Sin datos de flujo disponibles."
   },
   "burnout": {
@@ -76,19 +135,40 @@
     "subtitle": "Análisis multifactorial basado en patrones de trabajo e indicadores de recuperación",
     "riskScore": "Puntuación de Riesgo de Agotamiento",
     "riskLevel": "Nivel de Riesgo",
-    "factorLateNight": "Trabajo Nocturno",
-    "factorOverload": "Sobrecarga Semanal",
-    "factorWeekend": "Intrusión de Fin de Semana",
-    "factorRecovery": "Déficit de Recuperación",
+    "factors": {
+      "lateNight": "Late Night Work",
+      "overload": "Weekly Overload",
+      "weekend": "Weekend Intrusion",
+      "recovery": "Recovery Deficit"
+    },
     "weight": "Peso",
     "recommendations": "Recomendaciones",
-    "riskLow": "Bajo",
-    "riskModerate": "Moderado",
-    "riskHigh": "Alto",
-    "riskCritical": "Crítico",
-    "trendImproving": "Mejorando",
-    "trendStable": "Estable",
-    "trendWorsening": "Empeorando",
+    "riskLevels": {
+      "low": "Low",
+      "moderate": "Moderate",
+      "high": "High",
+      "critical": "Critical"
+    },
+    "trends": {
+      "improving": "Improving",
+      "stable": "Stable",
+      "worsening": "Worsening"
+    },
+    "warnings": {
+      "lateNightSevere": "Severe late-night work pattern detected. Over 75% of your active days involve work between 10 PM and 6 AM. This disrupts circadian rhythm and impairs cognitive recovery.",
+      "lateNightModerate": "Moderate late-night work pattern. A significant portion of your work happens after 10 PM. Try shifting deep work to morning hours when possible.",
+      "overloadSevere": "Severe weekly overload. Your 7-day rolling work average far exceeds sustainable levels. Chronic overload is the strongest predictor of burnout.",
+      "overloadModerate": "Moderate weekly overload detected. Your average daily hours are above the recommended threshold. Consider implementing recharge days.",
+      "weekendSevere": "Severe weekend intrusion. Over 75% of your weekends show significant work activity. Continuous work without full rest days prevents psychological detachment.",
+      "weekendModerate": "Moderate weekend work detected. Regular work on weekends reduces recovery capacity. Aim for at least one completely work-free day per week.",
+      "recoverySevere": "Severe recovery deficit. You have had multiple consecutive high-load days without adequate rest. This pattern is unsustainable and leads to diminishing returns.",
+      "recoveryModerate": "Moderate recovery deficit. Your recent schedule shows limited recovery windows. Even short breaks between intense periods improve long-term resilience.",
+      "criticalRisk": "Critical burnout risk. Immediate intervention recommended. Your current patterns match clinical burnout profiles. Prioritise sleep, boundaries, and rest.",
+      "highRisk": "High burnout risk detected. Multiple risk factors are elevated. Proactive adjustment of work habits is strongly advised.",
+      "trendWorsening": "Your burnout indicators are trending upward. Early intervention prevents long-term damage. Consider reducing workload and establishing firmer boundaries.",
+      "trendImproving": "Your burnout indicators are trending downward. Positive changes are taking effect. Continue protecting your recovery time.",
+      "healthyPatterns": "Your digital work patterns appear healthy. No significant burnout risk factors detected. Maintain your current boundaries and recovery practices."
+    },
     "noData": "Sin datos de agotamiento disponibles."
   },
   "apps": {
@@ -112,6 +192,10 @@
     "noData": "Sin datos de cronología disponibles."
   },
   "common": {
+    "brand": "AW Insights",
+    "tagline": "Digital Life Intelligence",
+    "language": "Language",
+    "privacyNote": "100% Local & Private",
     "hours": "h",
     "minutes": "m",
     "seconds": "s",
@@ -119,6 +203,8 @@
     "score": "Puntuación",
     "grade": "Calificación",
     "noData": "Sin datos",
+    "na": "N/A",
+    "none": "None",
     "loading": "Cargando...",
     "of": "de",
     "and": "y",
@@ -133,29 +219,10 @@
     "error": "Error",
     "success": "Éxito",
     "warning": "Advertencia",
-    "info": "Información"
-  },
-  "a11y": {
-    "openSidebar": "Abrir barra lateral",
-    "closeSidebar": "Cerrar barra lateral",
-    "navigateTo": "Navegar a {{section}}",
-    "fileUpload": "Cargar archivo de exportación de ActivityWatch",
-    "dismiss": "Descartar",
-    "menuToggle": "Alternar menú"
-  },
-  "warnings": {
-    "lateNightSevere": "Se detectó un patrón severo de trabajo nocturno. Más del 75% de tus días activos implican trabajo entre las 22:00 y las 06:00. Esto interrumpe el ritmo circadiano e afecta la recuperación cognitiva.",
-    "lateNightModerate": "Patrón moderado de trabajo nocturno. Una parte significativa de tu trabajo ocurre después de las 22:00. Intenta cambiar el trabajo profundo a horas matutinas cuando sea posible.",
-    "overloadSevere": "Sobrecarga semanal severa. Tu promedio móvil de 7 días de trabajo supera con creces los niveles sostenibles. La sobrecarga crónica es el predictor más fuerte del agotamiento.",
-    "overloadModerate": "Sobrecarga semanal moderada detectada. Tus horas diarias promedio están por encima del umbral recomendado. Considera implementar días de recarga.",
-    "weekendSevere": "Intrusión severa de fin de semana. Más del 75% de tus fines de semana muestran actividad laboral significativa. El trabajo continuo sin días de descanso completo impide el desapego psicológico.",
-    "weekendModerate": "Trabajo moderado de fin de semana detectado. El trabajo regular en fines de semana reduce la capacidad de recuperación. Apunta a al menos un día completamente libre de trabajo por semana.",
-    "recoverySevere": "Déficit severo de recuperación. Has tenido múltiples días consecutivos de alta carga sin descanso adecuado. Este patrón es insostenible y conduce a rendimientos decrecientes.",
-    "recoveryModerate": "Déficit moderado de recuperación. Tu horario reciente muestra ventanas de recuperación limitadas. Incluso descansos cortos entre períodos intensos mejoran la resistencia a largo plazo.",
-    "criticalRisk": "Riesgo crítico de agotamiento. Se recomienda intervención inmediata. Tus patrones actuales coinciden con perfiles clínicos de agotamiento. Prioriza el sueño, los límites y el descanso.",
-    "highRisk": "Alto riesgo de agotamiento detectado. Múltiples factores de riesgo están elevados. Se recomienda encarecidamente el ajuste proactivo de hábitos de trabajo.",
-    "trendWorsening": "Tus indicadores de agotamiento tienen una tendencia al alza. La intervención temprana previene el daño a largo plazo. Considera reducir la carga de trabajo y establecer límites más firmes.",
-    "trendImproving": "Tus indicadores de agotamiento tienen una tendencia a la baja. Los cambios positivos están teniendo efecto. Continúa protegiendo tu tiempo de recuperación.",
-    "healthyPatterns": "Tus patrones de trabajo digital parecen saludables. No se detectaron factores de riesgo significativos de agotamiento. Mantén tus límites actuales y prácticas de recuperación."
+    "info": "Información",
+    "accessibility": {
+      "openSidebar": "Open sidebar",
+      "closeSidebar": "Close sidebar"
+    }
   }
 }

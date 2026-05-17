@@ -105,7 +105,7 @@ export function BurnoutSection() {
               fontWeight="600"
               style={{ textTransform: 'uppercase', letterSpacing: '1px' }}
             >
-              {t(`burnout.riskLevels.${ba.riskLevel.toLowerCase()}`)}
+              {t(`burnout.riskLevels.${ba.riskLevel}`)}
             </text>
           </svg>
         </div>

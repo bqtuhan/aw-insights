@@ -261,8 +261,8 @@ export class BurnoutPredictor
     if (scores.lateNightScore >= 50) {
       warnings.push(
         scores.lateNightScore >= 75
-          ? 'burnout.warnings.lateNightSevere'
-          : 'burnout.warnings.lateNightModerate',
+          ? 'lateNightSevere'
+          : 'lateNightModerate',
       );
     }
 
@@ -270,8 +270,8 @@ export class BurnoutPredictor
     if (scores.overloadScore >= 50) {
       warnings.push(
         scores.overloadScore >= 75
-          ? 'burnout.warnings.overloadSevere'
-          : 'burnout.warnings.overloadModerate',
+          ? 'overloadSevere'
+          : 'overloadModerate',
       );
     }
 
@@ -279,8 +279,8 @@ export class BurnoutPredictor
     if (scores.weekendIntrusionScore >= 50) {
       warnings.push(
         scores.weekendIntrusionScore >= 75
-          ? 'burnout.warnings.weekendSevere'
-          : 'burnout.warnings.weekendModerate',
+          ? 'weekendSevere'
+          : 'weekendModerate',
       );
     }
 
@@ -288,28 +288,28 @@ export class BurnoutPredictor
     if (scores.recoveryDeficitScore >= 50) {
       warnings.push(
         scores.recoveryDeficitScore >= 75
-          ? 'burnout.warnings.recoverySevere'
-          : 'burnout.warnings.recoveryModerate',
+          ? 'recoverySevere'
+          : 'recoveryModerate',
       );
     }
 
     // Contextual composite risk classification
     if (riskLevel === 'critical') {
-      warnings.push('burnout.warnings.criticalRisk');
+      warnings.push('criticalRisk');
     } else if (riskLevel === 'high') {
-      warnings.push('burnout.warnings.highRisk');
+      warnings.push('highRisk');
     }
 
     // Velocity trend signals
     if (trend === 'worsening' && riskLevel !== 'low') {
-      warnings.push('burnout.warnings.trendWorsening');
+      warnings.push('trendWorsening');
     } else if (trend === 'improving' && riskLevel !== 'low') {
-      warnings.push('burnout.warnings.trendImproving');
+      warnings.push('trendImproving');
     }
 
     // Default return payload for optimal profiles
     if (warnings.length === 0) {
-      warnings.push('burnout.warnings.healthyPatterns');
+      warnings.push('healthyPatterns');
     }
 
     return warnings;
