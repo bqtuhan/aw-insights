@@ -203,6 +203,14 @@ export const RULE_SET: CategoryRule[] = [
   { pattern: /(instagram\.com|facebook\.com|twitter\.com|x\.com|tiktok\.com|snapchat\.com)/i, category: 'Entertainment' },
 
   // ──────────────────────────────────────────────
+  // PRODUCTIVITY — Custom & Emerging Apps
+  // ──────────────────────────────────────────────
+
+  // Manus app (productivity/work tool)
+  { pattern: /\b(manus|tech\.butterfly\.app)\b/i, category: 'Productivity' },
+  { pattern: /tech\.butterfly\.app/i, category: 'Productivity' },
+
+  // ──────────────────────────────────────────────
   // SYSTEM — OS Settings, File Managers, Utilities
   // ──────────────────────────────────────────────
 
